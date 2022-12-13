@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Synth Page</title>
+</head>
+
+<body>
+
+    <main>
+        <section>
+
+        <!-- WORKING/LEARNING CONAINER -->
+            <div class="link-container div1">
+                <ul style="align-items: flex-start;">
+                    <span>
+                        <a href="">Pacman</a>
+                        <a style="margin-right: 5px; margin-left: 5px;">/</a>
+                        <a href="">Aur</a>
+                    </span>
+                    <a href="">Odin</a>
+                    <a href="">Pico</a>
+                    <a href="">Datacamp</a>
+                </ul>
+            </div>
+
+
+        <!-- LEISURE AND REST CONTAINER -->
+            <div class="link-container div6">
+                <ul class="leisure-container">
+                    <a href="">Netflix</a>
+                    <a href="">Odysee</a>
+                    <a href="">Youtube</a>
+                    <a href="">Reddit</a>
+                    <!-- <a href="">Read</a> -->
+                </ul>
+            </div>
+
+
+            <div class="div4">
+                <div class="input-container">
+                    <div class="input-button-container">
+                        <input id="searchbar" type="text" placeholder="://" name="">
+
+                        <span onclick="toggleTooltip()" id="help-button">?</span>      
+                    </div>
+                    <div id="searchbar-tooltip" class="searchbar-tooltip">
+                        <li><img src="assets/wikipedia.svg" alt="wikipedia"><span>-w</span></li>
+                        <li><img src="assets/duckduckgo.svg" alt="duckduckgo"> <span>-d</span></li>
+                        <li><img src="assets/youtube-outlined.svg" alt="youtube"><span>-y</span></li>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="info div5">
+                <div id="clock">
+                </div>
+
+                <div id="greetings">
+                </div>
+                <a class="date" href="">
+                    <span id="day"></span> / <span id="month"></span>
+                </a>
+            </div>
+        </section>
+
+
+        
+    </main>
+
+
+    <script src="./main.js"></script>
+    <script src="./command.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'ms98';
+    src: url('./assets/ms98.ttf');
+}
+
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./assets/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'ms98';
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./assets/scanlines.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 35px;
+    grid-row-gap: 0px;
+}
+
+.div1 {grid-area: 1 / 1 / 2 / 2; padding: 10%;}
+.div4 {grid-area: 2 / 2 / 3 / 3; padding: 10%;}
+.div5 {grid-area: 1 / 3 / 2 / 4; padding: 10%;}
+.div6 {grid-area: 2 / 3 / 3 / 4; padding: 10%;}
+
+
+@media (min-width:320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+}
+
+@media (min-width:480px) {
+    /* smartphones, Android phones, landscape iPhone */
+}
+
+
+@media (max-width:800px) {
+    body {
+        overflow-y: scroll;
+    }
+
+    main {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(./assets/bg.png);
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+    section {
+        width: 100vw;
+        height: 200vh;
+        background-image: url(./assets/scanlines.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 30vh);
+        grid-column-gap: 0px;
+        grid-row-gap: 10px;
+    }
+
+    .div1 {
+        grid-area: 3 / 1 / 3 / 1;
+        padding: 0;
+    }
+    .div4 {
+        grid-area: 1 / 1 / 1 / span 2;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .div5 {
+        grid-area: 2 / 1 / 2 / span 2;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div6 {
+        grid-area: 3 / 2 / 3 / 2;
+        padding: 0;
+    }
+
+    .link-container ul {
+        align-items: center !important;
+    }
+
+    .input-container {
+        width: 75vw !important;
+    }
+
+    #searchbar {
+        background-color: rgba(112, 61, 110, 0.5);
+        border: solid 1px #f4738477;
+
+    }
+
+    #searchbar:focus {
+        border: solid 1px #f473848c;
+        background-color: rgba(112, 61, 110, 0.6);
+        outline: double thick #f4739e70;
+    }
+
+    .info{
+        /* From https://css.glass */
+        background: rgba(125, 47, 108, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        border: 1px solid rgba(125, 47, 108, 0.2);
+        margin: 30px 50px;
+    }
+ 
+    .searchbar-tooltip {
+        bottom: 60px !important;
+    }
+
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+
+
+
+.link-container {
+    width: 100%;
+    height: 100%;
+}
+
+.link-container ul {
+    letter-spacing: .1em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.leisure-container {
+    align-items: center
+}
+
+.link-container ul a {
+    color: #f47384;
+    font-size: 1.6em;
+    transition: ease-in-out 100ms;
+    text-decoration: none;
+}
+
+.link-container ul a:hover {
+    transition: ease-in-out 100ms;
+    color: #41a6a1;
+    transform: scale(1.1);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+#clock {
+    font-size: 4em;
+    color: #eca0a9;
+}
+
+#greetings {
+    font-size: 2em;
+    color: #eca0a9;
+}
+
+.date {
+    color: #f47384;
+    font-size: 1.6em;
+    transition: ease-in-out 100ms;
+    text-decoration: none;
+}
+
+.date:hover {
+    transition: ease-in-out 100ms;
+    color: #41a6a1;
+}
+
+/* INPUT */
+.div4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+#searchbar {
+/* From https://css.glass */
+background: rgba(125, 47, 108, 0.2);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(3px);
+    border: solid 1px #f473843b;
+    padding: 6px;
+    width: 96%;
+    font-size: 1.2em;
+    font-family: 'ms98';
+    letter-spacing: .1em;
+    color: white;
+
+}
+
+#searchbar:focus {
+    outline: double thick #f4739e70;
+    background: rgba(125, 47, 108, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.input-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#help-button {
+    margin-left: 10px;
+    color: white;
+    font-size: 1.2em;
+    background-color: #f47384;
+    width: 30px;
+    height: 25px;
+    display: grid;
+    justify-items: center;
+    align-items: flex-end;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.searchbar-tooltip {
+    height: 40px;
+    width: 300px;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+    transition: ease-in-out 200ms;
+    display: none;
+    position: absolute;
+    bottom: 80px;
+
+        background: rgba(125, 47, 108, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: 1px solid rgba(125, 47, 108, 0.2);
+        
+}
+.searchbar-tooltip-open {
+    display: flex !important;
+}
+.searchbar-tooltip li {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    width: 90%;
+    color: #feebee;
+    font-size: 1.4em;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.searchbar-tooltip li img {
+    padding-right: 10px;
+    width: 26px;
+    filter: invert(79%) sepia(90%) saturate(4025%) hue-rotate(290deg) brightness(101%) contrast(85%);
+}
