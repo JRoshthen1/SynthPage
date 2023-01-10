@@ -1,0 +1,91 @@
+/* Example userChrome.css file */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+@font-face {
+  font-family: 'hack';
+  src:
+      local('Hack Nerd Font Regular'),
+      local('Hack Regular Nerd Font Complete'),
+      url('Hack Regular Nerd Font Complete.ttf');
+    }
+
+
+.browser-toolbar:not(.titlebar-color) {
+  background: #19171a !important;
+  color: var(--toolbar-color);
+}
+#TabsToolbar{
+  font-size: 0.85em !important;
+}
+
+#titlebar{
+  background: #19171a !important;
+  padding-top: 5px !important;
+}
+
+#navigator-toolbox {
+  border: none !important;
+}
+.toolbar-items{
+  background-color: #19171a !important;
+}
+
+#urlbar {
+  background-color: #0f0f0f;
+  border: 1px solid #c86775;
+  border-radius: 15px;
+}
+
+#urlbar, #searchbar {
+  font-size: 1em !important;
+  font-family: 'hack';
+}
+
+.urlbarView-row[type="bookmark"] > span{
+  color: green !important;
+}
+ 
+.urlbarView-row[type="switchtab"] > span{
+  color: orange !important;
+}
+
+
+#nav-bar {
+  box-shadow: unset !important;
+  -moz-box-ordinal-group: 20 !important;
+  margin-top: -1px !important;
+}
+#nav-bar:not(:-moz-lwtheme) {
+  box-shadow: unset !important;
+}
+
+#urlbar-background, #searchbar{
+  background-color: #66845514 !important;
+  border-radius: 15px !important;
+
+}
+#urlbar-input-container {
+  padding: 0px 0px 0px 10px !important;
+}
+
+/* Delete the tab-bar firefox logo and a little border on the left */
+
+:root:not([privatebrowsingmode="temporary"]) :is(toolbarbutton, toolbarpaletteitem) + #tabbrowser-tabs, :root[privatebrowsingmode="temporary"] :is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button)) + #tabbrowser-tabs {
+  border-inline-start: none !important;
+  padding-inline-start: none !important;
+  margin-inline-start: none !important;
+}
+#firefox-view-button {
+  display: none;
+}
+#identity-box{
+  display: none;
+}
+
+#PlacesToolbarItems {
+  font-size: 9pt;
+  color: #ddd;
+}
+
+
+
