@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server logs</title>
+</head>
+<body>
+    <h1>Logs:</h1>
+    
+    <div id="logs"></div>
+
+    <script>
+    
+      const logContents = document.getElementById("logs")
+          const logFileURL = './caddy.log';
+    
+          fetch(logFileURL)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.status}`);
+              }
+              return response.text();
+            })
+            .then(data => {
+              console.log(data)
+              console.log(JSON.parse(data))
+
+              // Display the contents of the .log file
+//              logContents.textContent = data;
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              logContents.textContent = 'Error loading .log file.';
+            });
+
+      </script>
+</body>
+</html>

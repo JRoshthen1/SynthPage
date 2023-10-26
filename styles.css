@@ -282,16 +282,14 @@ backdrop-filter: blur(3px);
     cursor: pointer;
 }
 .searchbar-tooltip {
-    height: 40px;
-    width: 300px;
+    padding: 10px 20px;
     flex-direction: row;
     justify-content: stretch;
     align-items: center;
     transition: ease-in-out 200ms;
     display: none;
     position: absolute;
-    bottom: 80px;
-
+    bottom: 40px;
         background: rgba(125, 47, 108, 0.1);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -302,22 +300,19 @@ backdrop-filter: blur(3px);
 }
 .searchbar-tooltip-open {
     display: flex !important;
+    flex-direction: column;
 }
 .searchbar-tooltip li {
     width: 100%;
     height: 100%;
     list-style: none;
-    width: 90%;
     color: #feebee;
-    font-size: 1.4em;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.2em;
+    margin: 4px 0;
 }
-.searchbar-tooltip li img {
-    padding-right: 10px;
-    width: 26px;
-    filter: invert(79%) sepia(90%) saturate(4025%) hue-rotate(290deg) brightness(101%) contrast(85%);
+.searchbar-tooltip li span{
+    float: right;
+    margin-left: 8px;
 }
+
 

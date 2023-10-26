@@ -1,65 +1,52 @@
-String.prototype.replaceChars = function(character, replacement){
-    var str = this;
-    var a;
-    var b;
-    for( var i=0; i < str.length; i++ ){
-        if(str.charAt(i) == character){
-            a = str.substr(0, i) + replacement;
-            b = str.substr(i + 1);
-            console.log(a + b)
-            str = a + b;
+function search(input) {
 
-            
-        }
-    }
-    return str;
+    var searchTag = input.substr(0, 2)
+    var searchTerm = input.substr(3)
+    
+  switch (searchTag) {
+      case "-d":
+       window.location =
+         `https://duckduckgo.com/?q=${searchTerm.replace(/\s+/g, '+')}`
+      break;
+
+    case "-y":
+       window.location =
+         `https://yewtu.be/search?q=${searchTerm.replace(/\s+/g, '+')}`
+      break;
+
+    case "-w":
+      window.location =
+        `https://en.wikipedia.org/wiki/Special:Search/${encodeURL(searchTerm)}` 
+      break;
+
+    case "-l":
+      window.location =
+        `https://search-lemmy.com/results?query=${searchTerm.replace(/\s+/g, '+')}&page=1&mode=posts`
+      break;
+
+    default:
+      window.location = `https://www.google.ca/search?q=${encodeURL(input)}` //passing only input couse no option used 
+  }
 }
 
-function command(input){
-    console.log(input)
-    switch(input.substr(0, 2)){
-        case "-d":
-            input = input.substr(3);
-            window.location = "https://duckduckgo.com/?q=" +
-            input.replaceChars(" ", "+");
-            break;
-
-        case "-y":
-            input = input.substr(3);
-            window.location =
-            "https://www.youtube.com/results?search_query=" +
-            input.replaceChars(" ", "+");
-            break;
-
-        case "-w":
-            input = input.substr(3);
-            window.location =
-            "https://en.wikipedia.org/wiki/Special:Search/" +
-            input.replaceChars(" ", "%20");
-            break;
-
-        default:
-            temp = input.replaceChars("+", "%2B");
-            temp2 = temp.replaceChars("", "%20");
-            temp3 = temp2.replaceChars("#", "%23");
-            input = temp3.replaceChars("&", "%26");
-            window.location="https://www.google.ca/search?q=" + input;
-    }
+// clean the google url
+function encodeURL(unclean) {
+    const urlEncodeRegex = /[^a-zA-Z0-9\-._~]/g;
+    return unclean.replace(urlEncodeRegex, (match) => {
+      return '%' + match.charCodeAt(0).toString(16).toUpperCase();
+    });
 }
 
-
-
-window.onload = function(){
-    // search if presed enter key
-    commandInput = document.getElementById("searchbar");
-    if(!!commandInput){
-        commandInput.addEventListener("keypress", function(a){
-            var key = a.keyCode;
-            if(key == 13){
-                var input = this.value;
-                command(input);
-            }
-        });
-    }
-}
-
+window.onload = function () {
+  // search when pressed enter key
+  commandInput = document.getElementById("searchbar");
+  if (!!commandInput) {
+    commandInput.addEventListener("keypress", function (a) {
+      var key = a.keyCode;
+      if (key == 13) {
+        var input = this.value;
+        search(input);
+      }
+    });
+  }
+};
